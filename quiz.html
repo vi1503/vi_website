@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love Quiz for Amadeusz 💖</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #fff0f6;
+            padding: 50px;
+            color: #d6336c;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: #ff66b3;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ff3385;
+        }
+        #question, #finalMessage {
+            margin-top: 30px;
+            font-size: 20px;
+        }
+        #kiss {
+            font-size: 50px;
+            animation: pulse 1s infinite alternate;
+            display: none;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.5); }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Hi Amadeusz! 💗</h1>
+<p>Click the button to start a love quiz from Via 😘</p>
+
+<button id="startBtn">Start Quiz 💖</button>
+
+<div id="question"></div>
+
+<button id="yesBtn" style="display:none;">Yes</button>
+<button id="noBtn" style="display:none;">No</button>
+
+<div id="finalMessage"></div>
+<div id="kiss">💋</div>
+
+<script>
+    const questions = [
+        "Do you love me? 💕",
+        "Am I beautiful? 😘",
+        "Do you miss me when we are apart? 💗",
+        "Will you always take care of me? ❤️",
+        "Do you want us to be happy together forever? 💖"
+    ];
+
+    const answers = {
+        yes: [
+            "Yay! I love you too 😍",
+            "Of course! You are beautiful 💖",
+            "Aww, I miss you too! 💕",
+            "Yes! I’ll always take care of you ❤️",
+            "Yay! Forever and always 💗"
+        ],
+        no: [
+            "Of course, I love you too💕",
+            "Hmm… I disagree! You are gorgeous 💗",
+            "Aw, I’ll wait for you 😘",
+            "Hmm… Oopsie oopsie🤔",
+            "I think so 🤔 "
+        
+    };
+
+    let current = 0;
+
+    const startBtn = document.getElementById("startBtn");
+    const questionDiv = document.getElementById("question");
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const finalMessage = document.getElementById("finalMessage");
+    const kiss = document.getElementById("kiss");
+
+    startBtn.onclick = () => {
+        startBtn.style.display = "none";
+        showQuestion();
+        yesBtn.style.display = "inline-block";
+        noBtn.style.display = "inline-block";
+    };
+
+    function showQuestion() {
+        if (current < questions.length) {
+            questionDiv.innerText = questions[current];
+            finalMessage.innerText = "";
+            kiss.style.display = "none";
+        } else {
+            questionDiv.style.display = "none";
+            yesBtn.style.display = "none";
+            noBtn.style.display = "none";
+            finalMessage.innerText = "Congratulations! 💖 You completed the quiz… here’s your prize:";
+            kiss.style.display = "block";
+        }
+    }
+
+    yesBtn.onclick = () => {
+        alert(answers.yes[current]);
+        current++;
+        showQuestion();
+    };
+
+    noBtn.onclick = () => {
+        alert(answers.no[current]);
+        current++;
+        showQuestion();
+    };
+</script>
+
+</body>
+</html>
