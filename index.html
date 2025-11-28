@@ -5,7 +5,134 @@
         margin: auto;
         padding: 40px;
         border: 3px solid #ffb3d9;
-        border-radius: 20px;
+        border-radius: <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Via for Amadeusz 💗</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            transition: background 0.4s ease, color 0.4s ease;
+            position: relative;
+        }
+
+        /* DENSE HEART PATTERNS ON BOTH SIDES */
+        .heart-side {
+            position: fixed;
+            top: 0;
+            width: 120px; /* wider for more hearts */
+            height: 100%;
+            background-image: url('https://i.imgur.com/WAfFQk1.png');
+            /* ↑ This image is a dense set of pink hearts */
+            
+            background-repeat: repeat-y;
+            background-size: 120px contain;
+            opacity: 0.35; /* slightly stronger than before */
+            pointer-events: none;
+        }
+
+        .left-side {
+            left: 0;
+        }
+
+        .right-side {
+            right: 0;
+            transform: scaleX(-1); /* mirror for symmetric hearts */
+        }
+
+        /* Stylish theme buttons */
+        .theme-btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Quiz link button */
+        .link-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #ff4f8b;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .link-btn:hover {
+            transform: scale(1.08);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEART WALLPAPER SIDES -->
+    <div class="heart-side left-side"></div>
+    <div class="heart-side right-side"></div>
+
+    <h1>Hi kochanie, it's Via! 💗</h1>
+
+    <p style="font-size:18px;">
+        This is my mini website for you…  
+        Do you like it? 💕
+    </p>
+
+    <!-- THEME BUTTONS -->
+    <button class="theme-btn" onclick="setTheme('violet')"
+        style="background:#e6ccff; color:#4b0082;">
+        Light Violet Theme
+    </button>
+
+    <button class="theme-btn" onclick="setTheme('green')"
+        style="background:#d5f5d5; color:#0b6623;">
+        Soft Green Theme
+    </button>
+
+    <!-- Cute greeting button -->
+    <br><br>
+    <button onclick="alert('Dzień dobry, handsome! ❤️')"
+        style="margin-top: 20px; padding: 15px 25px; font-size: 18px; background:#ff4f8b; color:white; border:none; border-radius:10px; cursor:pointer;">
+        Click me 💗
+    </button>
+
+    <!-- Quiz link -->
+    <p>
+        <a class="link-btn" href="quiz.html">Try our fun quiz 💖</a>
+    </p>
+
+    <script>
+        function setTheme(choice) {
+            if (choice === "violet") {
+                document.body.style.background = "#f3e6ff";
+                document.body.style.color = "#4b0082";
+            }
+
+            if (choice === "green") {
+                document.body.style.background = "#e6ffe6";
+                document.body.style.color = "#0b6623";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+            20px;
         position: relative;
         box-shadow: 0 0 15px rgba(255, 180, 220, 0.25);
     ">
@@ -99,3 +226,4 @@
     </script>
 
 </body>
+
