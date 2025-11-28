@@ -1,11 +1,4 @@
-<body style="font-family: 'Arial', sans-serif; text-align: center; padding: 50px; background:#fff0f6;">
-
-    <div style="
-        max-width: 650px;
-        margin: auto;
-        padding: 40px;
-        border: 3px solid #ffb3d9;
-        border-radius: <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -18,31 +11,6 @@
             padding: 50px;
             margin: 0;
             transition: background 0.4s ease, color 0.4s ease;
-            position: relative;
-        }
-
-        /* DENSE HEART PATTERNS ON BOTH SIDES */
-        .heart-side {
-            position: fixed;
-            top: 0;
-            width: 120px; /* wider for more hearts */
-            height: 100%;
-            background-image: url('https://i.imgur.com/WAfFQk1.png');
-            /* ↑ This image is a dense set of pink hearts */
-            
-            background-repeat: repeat-y;
-            background-size: 120px contain;
-            opacity: 0.35; /* slightly stronger than before */
-            pointer-events: none;
-        }
-
-        .left-side {
-            left: 0;
-        }
-
-        .right-side {
-            right: 0;
-            transform: scaleX(-1); /* mirror for symmetric hearts */
         }
 
         /* Stylish theme buttons */
@@ -75,15 +43,10 @@
         .link-btn:hover {
             transform: scale(1.08);
         }
-
     </style>
 </head>
 
 <body>
-
-    <!-- HEART WALLPAPER SIDES -->
-    <div class="heart-side left-side"></div>
-    <div class="heart-side right-side"></div>
 
     <h1>Hi kochanie, it's Via! 💗</h1>
 
@@ -118,112 +81,17 @@
     <script>
         function setTheme(choice) {
             if (choice === "violet") {
-                document.body.style.background = "#f3e6ff";
-                document.body.style.color = "#4b0082";
+                document.body.style.background = "#f3e6ff";  // light violet
+                document.body.style.color = "#4b0082";       // dark violet text
             }
 
             if (choice === "green") {
-                document.body.style.background = "#e6ffe6";
-                document.body.style.color = "#0b6623";
+                document.body.style.background = "#e6ffe6";  // soft green
+                document.body.style.color = "#0b6623";       // dark green text
             }
         }
     </script>
 
 </body>
 </html>
-
-            20px;
-        position: relative;
-        box-shadow: 0 0 15px rgba(255, 180, 220, 0.25);
-    ">
-
-        <!-- Decorative corner -->
-        <div style="
-            position:absolute; top:-15px; left:-15px; 
-            width:40px; height:40px; 
-            border-top: 4px solid #ff8aba; 
-            border-left: 4px solid #ff8aba; 
-            border-radius: 10px;">
-        </div>
-
-        <div style="
-            position:absolute; bottom:-15px; right:-15px; 
-            width:40px; height:40px; 
-            border-bottom: 4px solid #ff8aba; 
-            border-right: 4px solid #ff8aba; 
-            border-radius: 10px;">
-        </div>
-
-        <h1 id="mainTitle" style="color:#cc3f70;">Hi kochanie, it's Via! 💗</h1>
-
-        <p id="mainText" style="font-size:18px; color:#cc3f70;">
-            This is my first-ever mini website…  
-            Is this cool?
-        </p>
-
-        <button 
-            id="mainButton"
-            onclick="alert('Dzień dobry, handsome! ❤️')"
-            style="
-                margin-top: 20px; padding: 15px 25px; font-size: 18px; 
-                background:#cc3f70; color:white; border:none; 
-                border-radius:10px; cursor:pointer;
-                transition: 0.3s;
-            ">
-            Click me 💗
-        </button>
-
-        <p style="margin-top: 30px;">
-            Want to try a fun quiz?  
-            <a id="quizLink" href="quiz.html" style="color:#cc3f70; font-weight:bold;">Click here! 💖</a>
-        </p>
-
-        <br><br>
-
-        <!-- Color Picker -->
-        <label style="font-weight:bold; color:#cc3f70;">Choose page color:</label><br>
-        <input 
-            type="color" 
-            id="colorPicker" 
-            value="#fff0f6"
-            style="margin-top:10px; width:80px; height:40px; cursor:pointer;">
-    </div>
-
-    <script>
-        document.getElementById("colorPicker").addEventListener("input", function() {
-            let chosenColor = this.value;
-
-            // Apply background
-            document.body.style.backgroundColor = chosenColor;
-
-            // Generate darker shade (auto)
-            function darken(hex, amount = 40) {
-                let c = hex.replace('#','');
-                let r = parseInt(c.substring(0,2), 16);
-                let g = parseInt(c.substring(2,4), 16);
-                let b = parseInt(c.substring(4,6), 16);
-
-                r = Math.max(0, r - amount);
-                g = Math.max(0, g - amount);
-                b = Math.max(0, b - amount);
-
-                return "#" + 
-                    r.toString(16).padStart(2, '0') +
-                    g.toString(16).padStart(2, '0') +
-                    b.toString(16).padStart(2, '0');
-            }
-
-            let darkerColor = darken(chosenColor, 70);
-
-            // Change all themed elements
-            document.getElementById("mainTitle").style.color = darkerColor;
-            document.getElementById("mainText").style.color = darkerColor;
-            document.getElementById("quizLink").style.color = darkerColor;
-
-            let button = document.getElementById("mainButton");
-            button.style.backgroundColor = darkerColor;
-        });
-    </script>
-
-</body>
 
