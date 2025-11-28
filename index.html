@@ -1,54 +1,101 @@
-<body style="font-family: Arial; text-align: center; background:#fff0f6; padding:50px; transition: background 0.6s ease;">
+<body style="font-family: 'Arial', sans-serif; text-align: center; padding: 50px; background:#fff0f6;">
 
-    <h1 style="color:#ff4f8b;">Hi kochanie, it's Via! 💗</h1>
+    <div style="
+        max-width: 650px;
+        margin: auto;
+        padding: 40px;
+        border: 3px solid #ffb3d9;
+        border-radius: 20px;
+        position: relative;
+        box-shadow: 0 0 15px rgba(255, 180, 220, 0.25);
+    ">
 
-    <p style="font-size:18px;">
-        This is my first-ever mini website…  
-        Is this cool?
-    </p>
+        <!-- Decorative corner -->
+        <div style="
+            position:absolute; top:-15px; left:-15px; 
+            width:40px; height:40px; 
+            border-top: 4px solid #ff8aba; 
+            border-left: 4px solid #ff8aba; 
+            border-radius: 10px;">
+        </div>
 
-    <button 
-        onclick="alert('Dzień dobry, handsome!❤️')"
-        style="margin-top: 20px; padding: 15px 25px; font-size: 18px; background:#ff4f8b; color:white; border:none; border-radius:10px; cursor:pointer;">
-        Click me 💗
-    </button>
+        <div style="
+            position:absolute; bottom:-15px; right:-15px; 
+            width:40px; height:40px; 
+            border-bottom: 4px solid #ff8aba; 
+            border-right: 4px solid #ff8aba; 
+            border-radius: 10px;">
+        </div>
 
-    <p>Want to try a fun quiz? <a href="quiz.html">Click here! 💖</a></p>
+        <h1 id="mainTitle" style="color:#cc3f70;">Hi kochanie, it's Via! 💗</h1>
 
-    <!-- 🌈 THEME BUTTONS -->
-    <div style="margin-top:40px;">
-        <button id="violetBtn"
-            style="padding:12px 20px; border-radius:12px; font-size:16px; border:none; cursor:pointer; margin:10px; 
-                   color:white; background:#c8a2ff;">
-            💜 Light Violet
+        <p id="mainText" style="font-size:18px; color:#cc3f70;">
+            This is my first-ever mini website…  
+            Is this cool?
+        </p>
+
+        <button 
+            id="mainButton"
+            onclick="alert('Dzień dobry, handsome! ❤️')"
+            style="
+                margin-top: 20px; padding: 15px 25px; font-size: 18px; 
+                background:#cc3f70; color:white; border:none; 
+                border-radius:10px; cursor:pointer;
+                transition: 0.3s;
+            ">
+            Click me 💗
         </button>
 
-        <button id="greenBtn"
-            style="padding:12px 20px; border-radius:12px; font-size:16px; border:none; cursor:pointer; margin:10px; 
-                   color:white; background:#9ad5a0;">
-            💚 Soft Green
-        </button>
+        <p style="margin-top: 30px;">
+            Want to try a fun quiz?  
+            <a id="quizLink" href="quiz.html" style="color:#cc3f70; font-weight:bold;">Click here! 💖</a>
+        </p>
+
+        <br><br>
+
+        <!-- Color Picker -->
+        <label style="font-weight:bold; color:#cc3f70;">Choose page color:</label><br>
+        <input 
+            type="color" 
+            id="colorPicker" 
+            value="#fff0f6"
+            style="margin-top:10px; width:80px; height:40px; cursor:pointer;">
     </div>
 
     <script>
-        const violet = document.getElementById("violetBtn");
-        const green = document.getElementById("greenBtn");
+        document.getElementById("colorPicker").addEventListener("input", function() {
+            let chosenColor = this.value;
 
-        violet.onclick = () => {
-            document.body.style.background = "#f3e6ff";  // gentle lavender
-        };
+            // Apply background
+            document.body.style.backgroundColor = chosenColor;
 
-        green.onclick = () => {
-            document.body.style.background = "#e6ffe6";  // pastel mint
-        };
+            // Generate darker shade (auto)
+            function darken(hex, amount = 40) {
+                let c = hex.replace('#','');
+                let r = parseInt(c.substring(0,2), 16);
+                let g = parseInt(c.substring(2,4), 16);
+                let b = parseInt(c.substring(4,6), 16);
+
+                r = Math.max(0, r - amount);
+                g = Math.max(0, g - amount);
+                b = Math.max(0, b - amount);
+
+                return "#" + 
+                    r.toString(16).padStart(2, '0') +
+                    g.toString(16).padStart(2, '0') +
+                    b.toString(16).padStart(2, '0');
+            }
+
+            let darkerColor = darken(chosenColor, 70);
+
+            // Change all themed elements
+            document.getElementById("mainTitle").style.color = darkerColor;
+            document.getElementById("mainText").style.color = darkerColor;
+            document.getElementById("quizLink").style.color = darkerColor;
+
+            let button = document.getElementById("mainButton");
+            button.style.backgroundColor = darkerColor;
+        });
     </script>
 
 </body>
-
-
-
-
-
-
-
-
