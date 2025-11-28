@@ -71,12 +71,12 @@
             "Yay! Forever and always 💗"
         ],
         no: [
-            "Of course, I love you too💕",
+            "Oh no 😢 but I still love you 💕",
             "Hmm… I disagree! You are gorgeous 💗",
             "Aw, I’ll wait for you 😘",
-            "Hmm… Oopsie oopsie🤔",
-            "I think so 🤔 "
-        
+            "Hmm… I’ll convince you! 💖",
+            "Oh no 😢 but I believe we can be happy together 💕"
+        ]
     };
 
     let current = 0;
@@ -90,9 +90,10 @@
 
     startBtn.onclick = () => {
         startBtn.style.display = "none";
-        showQuestion();
+        questionDiv.style.display = "block";
         yesBtn.style.display = "inline-block";
         noBtn.style.display = "inline-block";
+        showQuestion();
     };
 
     function showQuestion() {
@@ -124,3 +125,4 @@
 
 </body>
 </html>
+
